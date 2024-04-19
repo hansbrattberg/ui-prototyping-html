@@ -3,43 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving Checklist</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hello World</title>
 </head>
 <body>
-    <div class="checklist-container">
-        <h1>Moving Checklist</h1>
-        <input type="text" id="new-item" placeholder="Add new item">
-        <button onclick="addItem()">Add Item</button>
-        <ul class="checklist">
-            <li><input type="checkbox" id="boxes"><label for="boxes">Buy boxes/tape/bubble wrap</label></li>
-            <li><input type="checkbox" id="clean"><label for="clean">Clean out closet + dresser</label></li>
-            <li><input type="checkbox" id="double-check"><label for="double-check">Double check gas/electric</label></li>
-            <li><input type="checkbox" id="keys"><label for="keys">Pick up keys!</label></li>
-            <li><input type="checkbox" id="schedule"><label for="schedule">Schedule movers</label></li>
-        </ul>
-        <script>
-            function addItem() {
-                var ul = document.querySelector('.checklist');
-                var input = document.getElementById('new-item');
-                if (input.value.trim() !== '') {
-                    var newId = input.value.trim().replace(/\s+/g, '-').toLowerCase();
-                    var listItem = document.createElement('li');
-                    listItem.innerHTML = '<input type="checkbox" class="item-checkbox" id="' + newId + '"><label for="' + newId + '">' + input.value + '</label>';
-                    ul.appendChild(listItem);
-                    input.value = ''; // Clear input field after adding
-                }
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-                var checklist = document.querySelector('.checklist');
-                checklist.addEventListener('change', function(e) {
-                    if (e.target && e.target.matches('input[type="checkbox"]') && e.target.checked) {
-                        e.target.parentElement.remove();
-                    }
-                });
-            });
-        </script>
+    <div class="hello-world-container">
+        <h1>Hello, World!</h1>
     </div>
 </body>
 </html>
